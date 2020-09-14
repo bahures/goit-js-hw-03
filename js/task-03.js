@@ -1,11 +1,19 @@
 "use strict";
 const findBestEmployee = function (employees) {
-  // твой код
+  let result = "";
+  const values = Object.values(employees);
+  const max = Math.max(...values);
+
+  const names = Object.keys(employees);
+
+  for (const name of names) {
+    if (employees[name] === max) {
+      result = name;
+      return result;
+    }
+  }
 };
 
-/*
- * Вызовы функции для проверки работоспособности твоей реализации.
- */
 console.log(
   findBestEmployee({
     ann: 29,
@@ -13,7 +21,7 @@ console.log(
     helen: 1,
     lorence: 99,
   })
-); // lorence
+);
 
 console.log(
   findBestEmployee({
@@ -21,7 +29,7 @@ console.log(
     mango: 17,
     ajax: 4,
   })
-); // mango
+);
 
 console.log(
   findBestEmployee({
@@ -30,4 +38,4 @@ console.log(
     kiwi: 19,
     chelsy: 38,
   })
-); // lux
+);
